@@ -1,7 +1,7 @@
-using System;
 using UnityEngine;
 using Pathfinding;
-namespace My2DPlatformer {
+namespace My2DPlatformer 
+{
     public class StalkerAI
     {
         private readonly EnemyView _view;

@@ -9,7 +9,6 @@ namespace My2DPlatformer
         private Collider2D _collider;
         private Rigidbody2D _rigidbody;
 
-
         public bool IsGrounded { get; private set; }
         public bool HasLeftContacts { get; private set; }
         public bool HasRightContacts { get; private set; }

@@ -83,7 +83,6 @@ namespace My2DPlatformer
             {
                 newVelocity = Time.fixedDeltaTime * _characterView.WalkSpeed * (_xAxisInput < 0 ? -1 : 1);
             }
-            //_characterView.Rigidbody.velocity = _characterView.Rigidbody.velocity.Change(x: newVelocity + (_contactsPoller.IsGrounded ? _contactsPoller.GroundVelocity.x : 0));
             _characterView.Rigidbody.velocity = _characterView.Rigidbody.velocity.Change(x: newVelocity);
         }
 

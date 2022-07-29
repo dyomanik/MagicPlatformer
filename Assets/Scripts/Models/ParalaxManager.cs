@@ -28,7 +28,8 @@ namespace My2DPlatformer
 
             for (int i = 0; i < _backgrounds.Count; i++)
             {
-                _backgrounds[i].StartTransform.position = _backgrounds[i].transform.position.Change(x: _backgrounds[i].StartPosition.x + (_camera.position.x - _cameraStartPosition.x) * BACKGROUND_COEFFICIENT.x, 
+                _backgrounds[i].StartTransform.position = _backgrounds[i].transform.position.Change
+                    (x: _backgrounds[i].StartPosition.x + (_camera.position.x - _cameraStartPosition.x) * BACKGROUND_COEFFICIENT.x, 
                         y: _backgrounds[i].StartPosition.y + (_camera.position.y - _cameraStartPosition.y) * BACKGROUND_COEFFICIENT.y);
             }
         }

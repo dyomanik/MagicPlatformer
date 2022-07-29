@@ -9,6 +9,7 @@ namespace My2DPlatformer
         private CharacterView _characterView;
         private SpriteAnimator _spriteAnimator;
         private List<LevelObjectView> _coinViews;
+
         public CoinsManager(CharacterView characterView, List<LevelObjectView> coinViews, SpriteAnimator spriteAnimator)
         {
             _characterView = characterView;
@@ -20,6 +21,7 @@ namespace My2DPlatformer
                _spriteAnimator.StartAnimation(coinView.SpriteRenderer, Track.coinRotation, true, _animationsSpeed);
             }
         }
+
         private void OnLevelObjectContact(LevelObjectView contactView)
         {
             if (_coinViews.Contains(contactView))
@@ -28,6 +30,7 @@ namespace My2DPlatformer
                 GameObject.Destroy(contactView.gameObject);
             }
         }
+
         public void Dispose()
         {
             _characterView.LevelObjectViewContact -= OnLevelObjectContact;

@@ -1,48 +1,51 @@
 ﻿using UnityEngine;
 
-public class PatrolAIModel
+namespace My2DPlatformer
 {
-    private readonly Transform[] _waypoints;
-    private int _currentPointIndex;
-    
-    public PatrolAIModel(Transform[] waypoints)
+    public class PatrolAIModel
     {
-        _waypoints = waypoints;
-        _currentPointIndex = 0;
-    }
-  
-    public Transform GetNextTarget()
-    {
-        if (_waypoints == null)
+        private readonly Transform[] _waypoints;
+        private int _currentPointIndex;
+
+        public PatrolAIModel(Transform[] waypoints)
         {
-            return null;
+            _waypoints = waypoints;
+            _currentPointIndex = 0;
         }
 
-        _currentPointIndex = (_currentPointIndex + 1) % _waypoints.Length;
-        return _waypoints[_currentPointIndex];
-    }
-
-    public Transform GetClosestTarget(Vector2 fromPosition)
-    {
-        if (_waypoints == null)
+        public Transform GetNextTarget()
         {
-            return null;
-        } 
-    
-        var closestIndex = 0;
-        var closestDistance = 0.0f;
-        
-        for (var i = 0; i < _waypoints.Length; i++)
-        {
-            var distance = Vector2.Distance(fromPosition, _waypoints[i].position);
-            
-            if (closestDistance > distance)
+            if (_waypoints == null)
             {
-                closestDistance = distance;
-                closestIndex = i;
+                return null;
             }
+
+            _currentPointIndex = (_currentPointIndex + 1) % _waypoints.Length;
+            return _waypoints[_currentPointIndex];
         }
-        _currentPointIndex = closestIndex;
-        return _waypoints[_currentPointIndex];
+
+        public Transform GetClosestTarget(Vector2 fromPosition)
+        {
+            if (_waypoints == null)
+            {
+                return null;
+            }
+
+            var closestIndex = 0;
+            var closestDistance = 0.0f;
+
+            for (var i = 0; i < _waypoints.Length; i++)
+            {
+                var distance = Vector2.Distance(fromPosition, _waypoints[i].position);
+
+                if (closestDistance > distance)
+                {
+                    closestDistance = distance;
+                    closestIndex = i;
+                }
+            }
+            _currentPointIndex = closestIndex;
+            return _waypoints[_currentPointIndex];
+        }
     }
 }

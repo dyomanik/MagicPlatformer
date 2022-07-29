@@ -1,8 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-namespace My2DPlatformer {
+
+namespace My2DPlatformer 
+{
     public class EnemiesConfigurator : MonoBehaviour
     {
         [Header("Simple AI")]
@@ -87,6 +88,5 @@ namespace My2DPlatformer {
             _protectorAI.Deinit();
             _protectedZone.Deinit();
         }
-
     }
 }

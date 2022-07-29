@@ -18,6 +18,7 @@ namespace My2DPlatformer
             _path = path;
             _currentPointIndex = 0;
         }
+
         public Vector2 CalculateVelocity(Vector2 fromPosition)
         {
             if (_path == null)

@@ -13,7 +13,6 @@ namespace My2DPlatformer
         {
             _barrelTransform = barrelTransform;
             _aimTransform = aimTransform;
-
         }
 
         public void Update()
